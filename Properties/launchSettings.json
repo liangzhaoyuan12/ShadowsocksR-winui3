@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ShadowsocksR-winui3 (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "ShadowsocksR-winui3 (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

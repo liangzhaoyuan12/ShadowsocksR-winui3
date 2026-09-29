@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="ShadowsocksR_winui3.Views.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
+            <StackPanel Spacing="8">
+                <TextBlock x:Name="HeaderText" FontSize="16" FontWeight="SemiBold" TextWrapping="Wrap" />
+
+                <Grid ColumnSpacing="12" RowSpacing="8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0" Spacing="8">
+                        <Border BorderThickness="1" CornerRadius="4" Padding="12">
+                            <StackPanel Spacing="6">
+                                <TextBlock x:Name="Socks5ProxyGroup" FontWeight="SemiBold" Text="Remote proxy" />
+                                <Grid ColumnSpacing="12" RowSpacing="6">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="140" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+
+                                    <CheckBox x:Name="CheckSockProxy" Grid.Row="0" Grid.Column="0" Content="Proxy On"
+                                              HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                    <CheckBox x:Name="checkBoxPacProxy" Grid.Row="0" Grid.Column="1" Content="PAC &quot;direct&quot; return this proxy"
+                                              HorizontalAlignment="Left" VerticalAlignment="Center" />
+
+                                    <ComboBox x:Name="comboProxyType" Grid.Row="1" Grid.Column="1" />
+
+                                    <TextBlock x:Name="LabelS5Server" Grid.Row="2" Grid.Column="0" Text="Server IP" VerticalAlignment="Center" />
+                                    <TextBox x:Name="TextS5Server" Grid.Row="2" Grid.Column="1" />
+
+                                    <TextBlock x:Name="LabelS5Port" Grid.Row="3" Grid.Column="0" Text="Port" VerticalAlignment="Center" />
+                                    <NumberBox x:Name="NumS5Port" Grid.Row="3" Grid.Column="1" Minimum="0" Maximum="65535"
+                                               SpinButtonPlacementMode="Inline" />
+
+                                    <TextBlock x:Name="LabelS5Username" Grid.Row="4" Grid.Column="0" Text="Username" VerticalAlignment="Center" />
+                                    <TextBox x:Name="TextS5User" Grid.Row="4" Grid.Column="1" />
+
+                                    <TextBlock x:Name="LabelS5Password" Grid.Row="5" Grid.Column="0" Text="Password" VerticalAlignment="Center" />
+                                    <PasswordBox x:Name="TextS5Pass" Grid.Row="5" Grid.Column="1" />
+
+                                    <TextBlock x:Name="label1" Grid.Row="6" Grid.Column="0" Text="UserAgent" VerticalAlignment="Center" />
+                                    <TextBox x:Name="TextUserAgent" Grid.Row="6" Grid.Column="1" />
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+
+                        <Border BorderThickness="1" CornerRadius="4" Padding="12">
+                            <StackPanel Spacing="6">
+                                <TextBlock x:Name="ListenGroup" FontWeight="SemiBold" Text="Local proxy" />
+                                <Grid ColumnSpacing="12" RowSpacing="6">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="140" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+
+                                    <CheckBox x:Name="checkShareOverLan" Grid.Row="0" Grid.ColumnSpan="2" Content="Allow Clients from LAN"
+                                              HorizontalAlignment="Left" VerticalAlignment="Center" />
+
+                                    <TextBlock x:Name="ProxyPortLabel" Grid.Row="1" Grid.Column="0" Text="Port" VerticalAlignment="Center" />
+                                    <NumberBox x:Name="NumProxyPort" Grid.Row="1" Grid.Column="1" Minimum="0" Maximum="65535"
+                                               SpinButtonPlacementMode="Inline" />
+
+                                    <TextBlock x:Name="LabelAuthUser" Grid.Row="2" Grid.Column="0" Text="Username" VerticalAlignment="Center" />
+                                    <TextBox x:Name="TextAuthUser" Grid.Row="2" Grid.Column="1" />
+
+                                    <TextBlock x:Name="LabelAuthPass" Grid.Row="3" Grid.Column="0" Text="Password" VerticalAlignment="Center" />
+                                    <PasswordBox x:Name="TextAuthPass" Grid.Row="3" Grid.Column="1" />
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" Spacing="8">
+                        <Grid ColumnSpacing="12" RowSpacing="6">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="140" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <CheckBox x:Name="checkAutoStartup" Grid.Row="0" Grid.ColumnSpan="2" Content="Start on Boot"
+                                      HorizontalAlignment="Left" VerticalAlignment="Center" />
+                            <CheckBox x:Name="checkRandom" Grid.Row="1" Grid.ColumnSpan="2" Content="Load balance"
+                                      HorizontalAlignment="Left" VerticalAlignment="Center" />
+                            <TextBlock x:Name="LabelRandom" Grid.Row="2" Grid.Column="0" Text="Balance" VerticalAlignment="Center" />
+                            <ComboBox x:Name="RandomComboBox" Grid.Row="2" Grid.Column="1" />
+                            <CheckBox x:Name="checkBalanceInGroup" Grid.Row="3" Grid.ColumnSpan="2" Content="Balance in group"
+                                      HorizontalAlignment="Left" VerticalAlignment="Center" />
+                            <CheckBox x:Name="CheckAutoBan" Grid.Row="4" Grid.ColumnSpan="2" Content="AutoBan"
+                                      HorizontalAlignment="Left" VerticalAlignment="Center" IsEnabled="False" />
+                        </Grid>
+
+                        <Grid ColumnSpacing="12" RowSpacing="6">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="140" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <Button x:Name="buttonDefault" Grid.Row="0" Grid.Column="1" Content="Set Default" Click="buttonDefault_Click" />
+
+                            <TextBlock x:Name="label2" Grid.Row="1" Grid.Column="0" Text="DNS" VerticalAlignment="Center" />
+                            <TextBox x:Name="DNSText" Grid.Row="1" Grid.Column="1" />
+
+                            <TextBlock x:Name="ReconnectLabel" Grid.Row="2" Grid.Column="0" Text="Reconnect" VerticalAlignment="Center" />
+                            <NumberBox x:Name="NumReconnect" Grid.Row="2" Grid.Column="1" Minimum="0" Maximum="20"
+                                       SpinButtonPlacementMode="Inline" />
+
+                            <TextBlock x:Name="labelTimeout" Grid.Row="3" Grid.Column="0" Text=" Timeout" VerticalAlignment="Center" />
+                            <NumberBox x:Name="NumTimeout" Grid.Row="3" Grid.Column="1" Minimum="0" Maximum="60"
+                                       SpinButtonPlacementMode="Inline" />
+
+                            <TextBlock x:Name="TTLLabel" Grid.Row="4" Grid.Column="0" Text="TTL" VerticalAlignment="Center" />
+                            <NumberBox x:Name="NumTTL" Grid.Row="4" Grid.Column="1" Minimum="0" Maximum="600"
+                                       SpinButtonPlacementMode="Inline" />
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+
+            </StackPanel>
+        </ScrollViewer>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8" Margin="0,8,0,0">
+            <Button x:Name="OKButton" Content="OK" Click="OKButton_Click" />
+            <Button x:Name="MyCancelButton" Content="Cancel" Click="CancelButton_Click" />
+        </StackPanel>
+    </Grid>
+</Page>

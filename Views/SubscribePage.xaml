@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="ShadowsocksR_winui3.Views.SubscribePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Margin="12" ColumnSpacing="12" RowSpacing="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="320" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock x:Name="HeaderText" Grid.Row="0" Grid.ColumnSpan="2" FontSize="16" FontWeight="SemiBold"
+                   TextWrapping="Wrap" />
+
+        <ListBox x:Name="listServerSubscribe" Grid.Row="1" Grid.Column="0" SelectionMode="Single" FontFamily="Consolas"
+                 SelectionChanged="listServerSubscribe_SelectionChanged" />
+
+        <Grid Grid.Row="2" Grid.Column="0" ColumnSpacing="8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="buttonAdd" Grid.Column="0" Click="buttonAdd_Click" Content="Add" HorizontalAlignment="Left" />
+            <Button x:Name="buttonDel" Grid.Column="1" Click="buttonDel_Click" Content="Delete" HorizontalAlignment="Left" />
+        </Grid>
+
+        <CheckBox x:Name="checkBoxAutoUpdate" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left" />
+
+        <Grid Grid.Row="1" Grid.Column="1" ColumnSpacing="12" RowSpacing="6" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="140" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="label1" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" TextAlignment="Right" />
+            <TextBox x:Name="textBoxURL" Grid.Row="0" Grid.Column="1" TextChanged="textBoxURL_TextChanged" />
+
+            <TextBlock x:Name="label2" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" TextAlignment="Right" />
+            <TextBox x:Name="textBoxGroup" Grid.Row="1" Grid.Column="1" IsReadOnly="True" />
+        </Grid>
+
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Spacing="8" HorizontalAlignment="Right">
+            <Button x:Name="buttonOK" Click="buttonOK_Click" />
+            <Button x:Name="buttonCancel" Click="buttonCancel_Click" />
+        </StackPanel>
+    </Grid>
+</Page>

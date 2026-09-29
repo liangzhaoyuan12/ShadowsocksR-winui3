@@ -1,0 +1,47 @@
+# Build outputs (MSBuild / .NET / WinUI3)
+bin/
+obj/
+out/
+publish/
+packages/
+AppPackages/
+BundleArtifacts/
+Generated Files/
+TestResults/
+
+# Visual Studio workspace
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# NuGet
+*.nupkg
+*.snupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Package signing - never commit private keys (*.pfx).
+# If a clone fails to package, create a new test certificate in
+# Project Properties -> Package and Publish -> Packaging -> Choose Certificate.
+*.pfx
+*.p12
+*.snk
+
+# Package build artifacts
+*.appx
+*.msix
+*.msixbundle
+*.appxbundle
+*.appxsym
+*.appxrecipe
+
+# Logs
+*.log
+
+# OS junk
+Thumbs.db
+desktop.ini
+.DS_Store

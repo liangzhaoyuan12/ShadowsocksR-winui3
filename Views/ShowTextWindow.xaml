@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="ShadowsocksR_winui3.Views.ShowTextWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="QRCode">
+
+    <Grid x:Name="RootGrid" Margin="8" RowSpacing="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBox x:Name="TextBox"
+                 Grid.Row="0"
+                 AcceptsReturn="True"
+                 TextWrapping="Wrap"
+                 TextChanged="TextBox_TextChanged"
+                 KeyDown="TextBox_KeyDown" />
+        <Image x:Name="QrImage" Grid.Row="1" Stretch="Uniform" />
+    </Grid>
+</Window>

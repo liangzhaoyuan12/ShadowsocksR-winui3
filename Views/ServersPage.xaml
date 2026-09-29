@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="ShadowsocksR_winui3.Views.ServersPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Margin="12" ColumnSpacing="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Grid.RowSpan="2" RowSpacing="8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Button x:Name="LinkUpdate" Grid.Row="0" Click="LinkUpdate_Click" Visibility="Collapsed" HorizontalAlignment="Left" />
+            <ListBox x:Name="ServersListBox" Grid.Row="1" SelectionMode="Single"
+                     FontFamily="Consolas" SelectionChanged="ServersListBox_SelectionChanged" />
+            <Grid Grid.Row="2" ColumnSpacing="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="AddButton" Grid.Column="0" Click="AddButton_Click" />
+                <Button x:Name="DeleteButton" Grid.Column="1" Click="DeleteButton_Click" />
+            </Grid>
+            <Grid Grid.Row="3" ColumnSpacing="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="UpButton" Grid.Column="0" Click="UpButton_Click" />
+                <Button x:Name="DownButton" Grid.Column="1" Click="DownButton_Click" />
+            </Grid>
+        </Grid>
+
+        <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel Spacing="8">
+                <TextBlock x:Name="HeaderText" FontSize="16" FontWeight="SemiBold" TextWrapping="Wrap" />
+
+                <Border x:Name="ServerGroupBox" BorderThickness="1" CornerRadius="4" Padding="12">
+                    <StackPanel Spacing="6">
+                        <TextBlock x:Name="ServerGroupTitle" FontWeight="SemiBold" />
+                        <Grid ColumnSpacing="12" RowSpacing="6">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="140" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <CheckBox x:Name="IPLabel" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left"
+                                      Checked="IPLabel_Changed" Unchecked="IPLabel_Changed" />
+                            <PasswordBox x:Name="IPTextBox" Grid.Row="0" Grid.Column="1" PasswordRevealMode="Hidden" />
+
+                            <TextBlock x:Name="ServerPortLabel" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" />
+                            <NumberBox x:Name="NumServerPort" Grid.Row="1" Grid.Column="1" Minimum="0" Maximum="65535"
+                                       SpinButtonPlacementMode="Inline" />
+
+                            <TextBlock x:Name="labelUDPPort" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Visibility="Collapsed" />
+                            <NumberBox x:Name="NumUDPPort" Grid.Row="2" Grid.Column="1" Minimum="0" Maximum="65535"
+                                       SpinButtonPlacementMode="Inline" Visibility="Collapsed" />
+
+                            <CheckBox x:Name="PasswordLabel" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left"
+                                      Checked="PasswordLabel_Changed" Unchecked="PasswordLabel_Changed" />
+                            <PasswordBox x:Name="PasswordTextBox" Grid.Row="3" Grid.Column="1" PasswordRevealMode="Hidden" />
+
+                            <TextBlock x:Name="EncryptionLabel" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" />
+                            <ComboBox x:Name="EncryptionSelect" Grid.Row="4" Grid.Column="1" />
+
+                            <TextBlock x:Name="TCPProtocolLabel" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" />
+                            <ComboBox x:Name="TCPProtocolComboBox" Grid.Row="5" Grid.Column="1" />
+
+                            <TextBlock x:Name="labelObfs" Grid.Row="6" Grid.Column="0" VerticalAlignment="Center" />
+                            <ComboBox x:Name="ObfsCombo" Grid.Row="6" Grid.Column="1" SelectionChanged="ObfsCombo_SelectionChanged" DropDownClosed="ObfsCombo_DropDownClosed" LostFocus="ObfsCombo_LostFocus" />
+
+                            <TextBlock x:Name="labelProtocolParam" Grid.Row="7" Grid.Column="0" VerticalAlignment="Center" />
+                            <TextBox x:Name="TextProtocolParam" Grid.Row="7" Grid.Column="1" />
+
+                            <TextBlock x:Name="labelObfsParam" Grid.Row="8" Grid.Column="0" VerticalAlignment="Center" />
+                            <TextBox x:Name="TextObfsParam" Grid.Row="8" Grid.Column="1" />
+
+                            <TextBlock x:Name="labelRemarks" Grid.Row="9" Grid.Column="0" VerticalAlignment="Center" />
+                            <TextBox x:Name="RemarksTextBox" Grid.Row="9" Grid.Column="1" MaxLength="256" />
+
+                            <TextBlock x:Name="labelGroup" Grid.Row="10" Grid.Column="0" VerticalAlignment="Center" />
+                            <TextBox x:Name="TextGroup" Grid.Row="10" Grid.Column="1" MaxLength="64" />
+                        </Grid>
+
+                        <CheckBox x:Name="checkAdvSetting" Content="Adv. Setting" HorizontalAlignment="Left"
+                                  Checked="checkAdvSetting_Changed" Unchecked="checkAdvSetting_Changed" />
+                        <TextBlock x:Name="UDPoverTCPLabel" Text="UDP over TCP" HorizontalAlignment="Left"
+                                   Visibility="Collapsed" />
+                        <CheckBox x:Name="CheckUDPoverUDP" Content="UDP over UDP if not checked" HorizontalAlignment="Left"
+                                  Visibility="Collapsed" />
+                        <TextBlock x:Name="NoteText" TextWrapping="Wrap" Opacity="0.8" />
+
+                        <CheckBox x:Name="checkSSRLink" Content="SSR Link" HorizontalAlignment="Left" IsChecked="True"
+                                  Checked="checkSSRLink_Changed" Unchecked="checkSSRLink_Changed" />
+                        <TextBox x:Name="TextLink" IsReadOnly="True" GotFocus="TextLink_GotFocus" LostFocus="TextLink_LostFocus"
+                                 Tapped="TextLink_Tapped" />
+                    </StackPanel>
+                </Border>
+
+                <Image x:Name="QrImage" Width="350" Height="350" Stretch="Uniform" HorizontalAlignment="Left" />
+            </StackPanel>
+        </ScrollViewer>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8" Margin="0,8,0,0">
+            <Button x:Name="OKButton" Click="OKButton_Click" />
+            <Button x:Name="MyCancelButton" Click="CancelButton_Click" />
+        </StackPanel>
+    </Grid>
+</Page>
