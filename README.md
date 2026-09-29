@@ -4,6 +4,16 @@
 
 A modern ShadowsocksR (SSR) proxy client for Windows, built with **WinUI 3** and **.NET 8**, featuring a native interface that matches the Windows 11 design language. Lightweight, smooth, and ready to use out of the box.
 
+## Download
+
+**This app is available on the Microsoft Store.** Download and install it from the Store:
+
+<a href="https://get.microsoft.com/installer/download/9N0LBTN9Z8TL?referrer=appbadge" target="_self" >
+	<img src="https://get.microsoft.com/images/en-us%20dark.svg" width="200"/>
+</a>
+
+> **Note:** Release builds are **not** published as GitHub Releases. The Microsoft Store is the only official distribution channel.
+
 ## Features
 
 - **Server management** - Add, edit, reorder, and group servers; import via SSR links or clipboard; load balancing and balance-in-group strategies

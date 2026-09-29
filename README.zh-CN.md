@@ -4,6 +4,16 @@
 
 一款基于 **WinUI 3** 与 **.NET 8** 的现代化 ShadowsocksR（SSR）Windows 代理客户端，拥有符合 Windows 11 设计语言的原生界面，轻量流畅，开箱即用。
 
+## 下载
+
+**本软件已上架微软商店（Microsoft Store）**，请前往商店下载安装：
+
+<a href="https://get.microsoft.com/installer/download/9N0LBTN9Z8TL?referrer=appbadge" target="_self" >
+	<img src="https://get.microsoft.com/images/en-us%20dark.svg" width="200"/>
+</a>
+
+> **注意：** 本项目**不会**在 GitHub Releases 发布发行构建版，微软商店是唯一的官方分发渠道。
+
 ## 功能特性
 
 - **服务器管理** - 添加、编辑、排序、分组管理服务器，支持 SSR 链接导入与剪贴板分享，支持负载均衡与负载均衡分组
